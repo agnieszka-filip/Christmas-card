@@ -35,10 +35,10 @@ const init = () => {
     ctx.fillRect(house.x, house.y, house.width, house.height);
 
     ctx.beginPath();
-    ctx.moveTo(house.x, window.innerHeight - 160);
-    ctx.lineTo(window.innerWidth - 280, window.innerHeight - 200);
-    ctx.lineTo(window.innerWidth - 220, window.innerHeight - 200);
-    ctx.lineTo(window.innerWidth - 200, house.y);
+    ctx.moveTo(house.x, house.y);
+    ctx.lineTo(house.x + 20, house.y - 40);
+    ctx.lineTo(house.x + 80, house.y - 40);
+    ctx.lineTo(house.x + 100, house.y);
     ctx.lineTo(house.x, house.y);
     ctx.strokeStyle = "rgb(0, 0, 0)";
     ctx.stroke();
@@ -168,6 +168,34 @@ const drawLights = () => {
         && e.offsetY > tree.y - 60
         && e.offsetY < tree.y + 25) {
             drawLights();
+
+            if (window.innerWidth > 900) {
+                ctx.font = "5em Roboto";
+                ctx.shadowColor ="rgb(255, 255, 255)";
+                ctx.shadowBlur = 7;
+                ctx.fillText("Merry Christmas!", window.innerWidth - (window.innerWidth - 200), window.innerHeight / 2);
+                ctx.shadowBlur = 0;
+            } else if (window.innerWidth > 600 || window.innerHeight < 400) {
+                ctx.font = "3em Roboto";
+                ctx.shadowColor ="rgb(255, 255, 255)";
+                ctx.shadowBlur = 5;
+                ctx.fillText("Merry Christmas!", window.innerWidth - (window.innerWidth - 100), (window.innerHeight / 2) - 100);
+                ctx.shadowBlur = 0;
+            } else if (window.innerWidth > 500) {
+                ctx.font = "3em Roboto";
+                ctx.shadowColor ="rgb(255, 255, 255)";
+                ctx.shadowBlur = 4;
+                ctx.fillText("Merry Christmas!", window.innerWidth - (window.innerWidth - 100), (window.innerHeight / 2) - 100);
+                ctx.shadowBlur = 0;
+            } else if (window.innerWidth < 500) {
+                ctx.font = "3em Roboto";
+                ctx.shadowColor ="rgb(255, 255, 255)";
+                ctx.shadowBlur = 4;
+                ctx.fillText("Merry Christmas!", window.innerWidth - (window.innerWidth - 40), (window.innerHeight / 2) - 100);
+                ctx.shadowBlur = 0;
+            }
+
+            
         }
     });
 
