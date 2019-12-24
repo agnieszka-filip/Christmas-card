@@ -172,13 +172,13 @@ const drawLights = () => {
             if (window.innerWidth > 900) {
                 ctx.font = "5em Roboto";
                 ctx.shadowColor ="rgb(255, 255, 255)";
-                ctx.shadowBlur = 7;
+                ctx.shadowBlur = 4;
                 ctx.fillText("Merry Christmas!", window.innerWidth - (window.innerWidth - 200), window.innerHeight / 2);
                 ctx.shadowBlur = 0;
             } else if (window.innerWidth > 600 || window.innerHeight < 400) {
                 ctx.font = "3em Roboto";
                 ctx.shadowColor ="rgb(255, 255, 255)";
-                ctx.shadowBlur = 5;
+                ctx.shadowBlur = 4;
                 ctx.fillText("Merry Christmas!", window.innerWidth - (window.innerWidth - 100), (window.innerHeight / 2) - 100);
                 ctx.shadowBlur = 0;
             } else if (window.innerWidth > 500) {
