@@ -8,25 +8,3 @@ canvas {
     background: linear-gradient(0deg, rgba(52,21,24,1) 1%, rgba(3,1,50,1) 100%);
     z-index: auto;
 }
-
-#house {
-    background: rgb(0, 0, 0);
-    height: 4.2vw;
-    width: 6vw;
-    position: absolute;
-    top: 82%;
-    right: 15%;
-    z-index: 1;
-}
-
-#roof {
-    border-bottom: 3vw solid #000000;
-	border-left: 1.8vw solid transparent;
-	border-right: 1.8vw solid transparent;
-	height: 0;
-    width: 4vw;
-    position: relative;
-    top: -5vh;
-    right: 0.8vw;
-    z-index: 1;
-}
