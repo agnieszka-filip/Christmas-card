@@ -28,6 +28,7 @@ const init = () => {
         y : window.innerHeight - 160,
         width : 100,
         height : 60
+
     }
 
     ctx.fillStyle = "rgb(0, 0, 0)";
@@ -57,6 +58,31 @@ const init = () => {
         }
     });
     
+    // Tree
+
+    ctx.beginPath();
+    ctx.moveTo(house.x - 85, house.y + 40);
+    ctx.lineTo(house.x - 85, house.y + 25);
+    ctx.lineTo(house.x - 117, house.y + 25);
+    ctx.lineTo(house.x - 95, house.y);
+    ctx.lineTo(house.x - 112, house.y);
+    ctx.lineTo(house.x - 90, house.y - 25);
+    ctx.lineTo(house.x - 105, house.y - 25);
+    ctx.lineTo(house.x - 75, house.y - 60);
+    ctx.lineTo(house.x - 50, house.y - 25);
+    ctx.lineTo(house.x - 65, house.y - 25);
+    ctx.lineTo(house.x - 43, house.y);
+    ctx.lineTo(house.x - 65, house.y);
+    ctx.lineTo(house.x - 40, house.y + 25);
+    ctx.lineTo(house.x - 73, house.y + 25);
+    ctx.lineTo(house.x - 73, house.y + 40);
+    ctx.lineTo(house.x - 88, house.y + 40);
+    ctx.strokeStyle = "rgb(0, 0, 0)";
+    ctx.stroke();
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fill(); 
+    ctx.closePath();
+    
 }
 
 const drawWin = () => {
@@ -83,4 +109,67 @@ window.addEventListener("resize", () => {
 
     init();
 });
+
+const tree = {
+    x : window.innerWidth - 300,
+    y : window.innerHeight - 160
+}
+
+const drawLights = () => {
+
+    
+    ctx.beginPath();
+    ctx.arc(tree.x - 82, tree.y - 45, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(62, 201, 2)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(tree.x - 75, tree.y - 35, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(201, 2, 2)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(tree.x - 68, tree.y - 22, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(62, 201, 2)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(tree.x - 78, tree.y - 15, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(201, 2, 2)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(tree.x - 88, tree.y - 5, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(62, 201, 2)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(tree.x - 97, tree.y + 5, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(201, 2, 2)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(tree.x - 80, tree.y + 10, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(62, 201, 2)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(tree.x - 65, tree.y + 15, 3, 0, Math.PI * 2, false);
+    ctx.fillStyle = "rgb(201, 2, 2)";
+    ctx.fill();
+}
+
+ // Tree interactivity
+ window.addEventListener("click", (e) => {
+    
+        
+    if (e.offsetX > tree.x - 117
+        && e.offsetX < tree.x - 40
+        && e.offsetY > tree.y - 60
+        && e.offsetY < tree.y + 25) {
+            drawLights();
+        }
+    });
+
+
 
